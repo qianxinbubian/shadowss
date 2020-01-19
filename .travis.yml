@@ -7,7 +7,6 @@ before_script:
     #- sudo useradd -m qxqx
     #- sudo chown -R qxqx:qxqx /home/qxqx
     #- su qxqx
-    - mkdir /home/${USER}/.config
     - mkdir /home/${USER}/.config/nvim
     - openssl aes-256-cbc -K $encrypted_54b4dd754176_key -iv $encrypted_54b4dd754176_iv
       -in .travis/gitee_id_rsa.enc -out ~/.ssh/gitee_id_rsa -d
