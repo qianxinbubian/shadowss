@@ -5,7 +5,8 @@ python:
     - 3.8
 before_script:
     - sudo useradd -m qxqx
-    - sudo chown -R qxqx:qxqx /home/qxqx
+    #- sudo chown -R qxqx:qxqx /home/qxqx
+    - su qxqx
     - mkdir /home/qxqx/.config
     - mkdir /home/qxqx/.config/nvim
     - openssl aes-256-cbc -K $encrypted_54b4dd754176_key -iv $encrypted_54b4dd754176_iv
