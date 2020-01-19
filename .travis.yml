@@ -1,7 +1,16 @@
 language: python
-
 before_script:
-  - pip3 install requests
-  
+    - openssl aes-256-cbc -K $encrypted_54b4dd754176_key -iv $encrypted_54b4dd754176_iv
+      -in gitee_id_rsa.enc -out ~/.ssh/gitee_id_rsa -d
+    #- openssl aes-256-cbc -K $encrypted_54b4dd754176_key -iv $encrypted_54b4dd754176_iv
+      #-in github_id_rsa.enc -out github_id_rsa -d
+    - chmod 600 ~/.ssh/gitee_id_rsa
+    - eval $(ssh-agent)
+    - ssh-add ~/.ssh/gitee_id_rsa
+    - cp .travis/ssh_config ~/.ssh/config
+    - git config --global user.name "qiaoxiaoqianxi"
+    - git config --global user.email "liminghua13118@163.com"
+install: 
+    - pip3 install requests
 script:
-  - python Copy.py
+    - python Copy.py

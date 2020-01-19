@@ -108,6 +108,7 @@ def AllCopy():
     """
     startTime = datetime.datetime.now().strftime("%Y-%m-%d %H-%M-%S")
     print(startTime)
+    getUrlName('https://gitee.com/qiaoxiaoqianxi/nvim/blob/master/init.vim')
     # getPlugName("init.vim")
     PlugName.append("neoclideLMHcoc.nvim")
 
@@ -138,7 +139,6 @@ def delRepo(RepoName : str):
     os.system(MyRepoDel + MyRepoDel_Tail)
     
 if __name__ == "__main__":
-    getUrlName('https://gitee.com/qiaoxiaoqianxi/nvim/blob/master/init.vim')
-    print(PlugName)
-    # AllCopy()
+    # print(PlugName)
+    AllCopy()
 
