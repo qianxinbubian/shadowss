@@ -1,0 +1,7 @@
+language: python
+
+before_script:
+  - pip3 install requests
+  
+script:
+  - python Copy.py
