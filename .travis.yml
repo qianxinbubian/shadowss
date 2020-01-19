@@ -21,4 +21,4 @@ before_script:
 install: 
     - pip install requests
 script:
-    - python Copy.py
+    - python3 Copy.py
