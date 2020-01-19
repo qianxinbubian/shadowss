@@ -57,7 +57,7 @@ def downloadAndUpload(plugname:str):
     url_base   = "https://github.com/"
 
     #   download plugin from github
-    os.chdir("/home/qxqx/.config/nvim/build/")
+    os.chdir("/home/${USER}/.config/nvim/build/")
     n = re.sub("LMH","/",plugname)
     print("Start :  " + n)
     cmd_clone = "git clone " + url_base + n + ".git"
@@ -67,7 +67,7 @@ def downloadAndUpload(plugname:str):
     dir_name = re.findall(r'/.*', n, re.I | re.S)[0][1:]
 
     MyRepoTail = "'{\"access_token\":\"dda869c399ca33e736f09ba11ae405d9\",\"name\":\"" + plugname + "\",\"description\":\"Mirror\",\"has_issues\":\"true\",\"has_wiki\":\"true\"}'"
-    os.chdir("/home/qxqx/.config/nvim/build/" + dir_name)  #   进入插件目录
+    os.chdir("/home/${USER}/.config/nvim/build/" + dir_name)  #   进入插件目录
 
     res = requests.get("https://gitee.com/qiaoxiaoqianxi/" + plugname).status_code
     if 404 == res:                                # 本就不存在仓库，
@@ -111,9 +111,9 @@ def AllCopy():
     getUrlName('https://gitee.com/qiaoxiaoqianxi/nvim/blob/master/init.vim')
     # getPlugName("init.vim")
 
-    if not os.path.exists("/home/qxqx/.config/nvim/build") :
-        os.makedirs("/home/qxqx/.config/nvim/build")
-    os.chdir("/home/qxqx/.config/nvim/build")
+    if not os.path.exists("/home/${USER}/.config/nvim/build") :
+        os.makedirs("/home/${USER}/.config/nvim/build")
+    os.chdir("/home/${USER}/.config/nvim/build")
 
     pool = multiprocessing.Pool(processes=16)
     for pname in PlugName:
@@ -125,7 +125,7 @@ def AllCopy():
     endTime = datetime.datetime.now().strftime("%Y-%m-%d %H-%M-%S")
     print(endTime)
 
-    os.system('rm -rf /home/qxqx/.config/nvim/build')
+    os.system('rm -rf /home/${USER}/.config/nvim/build')
 
 #   Delete a Repo 
 MyRepoDel = "curl -X DELETE --header 'Content-Type: application/json;charset=UTF-8' 'https://gitee.com/api/v5/repos/qiaoxiaoqianxi/"
