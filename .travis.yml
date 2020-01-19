@@ -1,9 +1,9 @@
 language: python
 before_script:
     - openssl aes-256-cbc -K $encrypted_54b4dd754176_key -iv $encrypted_54b4dd754176_iv
-      -in gitee_id_rsa.enc -out ~/.ssh/gitee_id_rsa -d
+      -in .travis/gitee_id_rsa.enc -out ~/.ssh/gitee_id_rsa -d
     #- openssl aes-256-cbc -K $encrypted_54b4dd754176_key -iv $encrypted_54b4dd754176_iv
-      #-in github_id_rsa.enc -out github_id_rsa -d
+      #-in .travis/github_id_rsa.enc -out ~/.ssh/github_id_rsa -d
     - chmod 600 ~/.ssh/gitee_id_rsa
     - eval $(ssh-agent)
     - ssh-add ~/.ssh/gitee_id_rsa
