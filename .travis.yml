@@ -19,6 +19,6 @@ before_script:
     - git config --global user.name "qiaoxiaoqianxi"
     - git config --global user.email "liminghua13118@163.com"
 install: 
-    - pip3 install requests
+    - pip install requests
 script:
     - python Copy.py
