@@ -125,7 +125,7 @@ def AllCopy():
     endTime = datetime.datetime.now().strftime("%Y-%m-%d %H-%M-%S")
     print(endTime)
 
-    os.system('rm -rf /home/${USER}/.config/nvim/build')
+    os.system('rm -rf ~/.config/nvim/build')
 
 #   Delete a Repo 
 MyRepoDel = "curl -X DELETE --header 'Content-Type: application/json;charset=UTF-8' 'https://gitee.com/api/v5/repos/qiaoxiaoqianxi/"
