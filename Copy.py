@@ -79,8 +79,9 @@ def downloadAndUpload(plugname:str):
         os.system(cmd_add)                        # 添加
         os.system(cmd_commit_upload)              # 提交
         os.system(cmd_push)                       # 推送
+        print("Created: " + n)
     else:                                         # 存在仓库，更新仓库
-        UpdateTime = datetime.datetime.now().strftime("%Y-%m-%d %H-%M-%S")
+        UpdateTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         os.system("git clone git@gitee.com:qiaoxiaoqianxi/" + plugname + ".git") # 用ssh方式克隆
         os.system("rm -rf .git")
         os.system("mv " + plugname + "/.git .")   # 移动.git
@@ -88,8 +89,8 @@ def downloadAndUpload(plugname:str):
         os.system(cmd_add)
         os.system(cmd_commit_update + UpdateTime + '"')
         os.system(cmd_push)
-
-    print("End :  " + n)
+        print("Updated: " + n)
+        print("UpdateTime: " + UpdateTime)
 
 def replaceLine(file, oldstr, newstr):
     """
@@ -106,7 +107,7 @@ def AllCopy():
     :returns: TODO
 
     """
-    startTime = datetime.datetime.now().strftime("%Y-%m-%d %H-%M-%S")
+    startTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(startTime)
     getUrlName('https://gitee.com/qiaoxiaoqianxi/nvim/blob/master/init.vim')
     # getPlugName("init.vim")
@@ -122,7 +123,7 @@ def AllCopy():
     pool.close()
     pool.join()
 
-    endTime = datetime.datetime.now().strftime("%Y-%m-%d %H-%M-%S")
+    endTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(endTime)
 
     os.system('rm -rf ~/.config/nvim/build')
