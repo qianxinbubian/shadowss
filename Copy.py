@@ -20,7 +20,6 @@ import multiprocessing
 import sys
 
 PlugName = []
-MyToken   = "dda869c399ca33e736f09ba11ae405d9"
 MyRepo    = "curl -X POST --header 'Content-Type: application/json;charset=UTF-8' 'https://gitee.com/api/v5/user/repos' -d "
 
 def getPlugName(file):
@@ -67,7 +66,7 @@ def downloadAndUpload(plugname:str):
     #   gitee operation
     dir_name = re.findall(r'/.*', n, re.I | re.S)[0][1:]
 
-    MyRepoTail = "'{\"access_token\":\"dda869c399ca33e736f09ba11ae405d9\",\"name\":\"" + plugname + "\",\"description\":\"Mirror\",\"has_issues\":\"true\",\"has_wiki\":\"true\"}'"
+    MyRepoTail = "'{\"access_token\":\"" + MyToken + "\",\"name\":\"" + plugname + "\",\"description\":\"Mirror\",\"has_issues\":\"true\",\"has_wiki\":\"true\"}'"
     os.chdir("/home/travis/.config/nvim/build/" + dir_name)  #   进入插件目录
 
     res = requests.get("https://gitee.com/qiaoxiaoqianxi/" + plugname).status_code
@@ -134,7 +133,7 @@ def delRepo(RepoName : str):
     """Delete a repo named RepoName
 
     """
-    MyRepoDel_Tail = RepoName + "?access_token=dda869c399ca33e736f09ba11ae405d9'"
+    MyRepoDel_Tail = RepoName + "?access_token=" + MyToken + "'"
 
     os.system(MyRepoDel + MyRepoDel_Tail)
     
