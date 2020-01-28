@@ -21,4 +21,5 @@ before_script:
 install: 
     - pip install requests
 script:
-    - python3 Copy.py
+    #- python3 Copy.py
+    - python dodownload.py
