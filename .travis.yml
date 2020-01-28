@@ -22,4 +22,4 @@ install:
     - pip install requests
 script:
     #- python3 Copy.py
-    - python download.py
+    - python3 download.py
