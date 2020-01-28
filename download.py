@@ -47,7 +47,7 @@ def dl(na:str,url:str):
     else:                                         # 存在仓库，更新仓库
         UpdateTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         os.system("git clone git@gitee.com:qiaoxiaoqianxi/" + na  + ".git") # 用ssh方式克隆
-        os.system("rm -rf .git")
+        # os.system("rm -rf .git")
         os.system("mv " + na  + "/.git .")   # 移动.git
         os.system("rm -rf " + na )           # 删除多余内容
         os.system(cmd_add)
