@@ -20,7 +20,12 @@ def getUrl():
 def dl(na:str,url:str):
     os.mkdir("na")
     os.chdir("na")
-    os.system('wget ' + url)
+    # os.system('wget ' + url)
+    os.system('curl --range 0-49999999          -o archwsl-part1 ' + url)
+    os.system('curl --range 50000000-99999999   -o archwsl-part2 ' + url)
+    os.system('curl --range 100000000-149999999 -o archwsl-part3 ' + url)
+    os.system('curl --range 150000000-199999999 -o archwsl-part4 ' + url)
+    os.system('curl --range 200000000-          -o archwsl-part5 ' + url)
 
     cmd_rm     = "rm -rf .git"
     cmd_init   = "git init"
