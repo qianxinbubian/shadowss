@@ -11,8 +11,8 @@ import platform
 import multiprocessing
 import requests
 import datetime
-from url import Inf
 
+Inf = [['archwsl','https://github.com/yuk7/ArchWSL/releases/download/19.11.16.0/ArchWSL-AppX_19.11.16.0_x64.appx']]
 MyRepo    = "curl -X POST --header 'Content-Type: application/json;charset=UTF-8' 'https://gitee.com/api/v5/user/repos' -d "
 def getUrl():
     pass
@@ -63,7 +63,7 @@ def dl(na:str,url:str):
 
 
 if __name__ == "__main__":
-    na  = Inf[0][0]
-    url = Inf[0][1]
+    na  = 'archwsl'
+    url = 'https://github.com/yuk7/ArchWSL/releases/download/19.11.16.0/ArchWSL-AppX_19.11.16.0_x64.appx'
     dl(na,url)
     pass
