@@ -53,7 +53,8 @@ def dl(na:str,url:str):
         UpdateTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         os.system("git clone git@gitee.com:qiaoxiaoqianxi/" + na  + ".git") # 用ssh方式克隆
         # os.system("rm -rf .git")
-        os.system("mv " + na  + "/.git .")   # 移动.git
+        # os.system("mv " + na  + "/.git .")   # 移动.git
+        os.system("mv " + na + "/* .")  # 移动所有文件
         os.system("rm -rf " + na )           # 删除多余内容
         os.system(cmd_add)
         os.system(cmd_commit_update + UpdateTime + '"')
@@ -63,7 +64,7 @@ def dl(na:str,url:str):
 
 
 if __name__ == "__main__":
-    na  = Inf[0][0]
-    url = Inf[0][1]
+    na  = Inf[1][0]
+    url = Inf[1][1]
     dl(na,url)
     pass

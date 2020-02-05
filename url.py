@@ -6,5 +6,6 @@
 #         Date            :   2020年01月27日 星期一 21时28分15秒
 #==================================================================================================
 
-Inf =[['archwsl','https://github.com/alacritty/alacritty/releases/download/v0.4.1/Alacritty-v0.4.1-windows-portable.zip']]
+Inf=[['archwsl','https://github.com/alacritty/alacritty/releases/download/v0.4.1/Alacritty-v0.4.1-windows-portable.zip'],
+['archwsl','https://github.com/yuk7/wsldl/releases/download/20013100/Launcher.exe']]
 # print(Inf[0][1])
